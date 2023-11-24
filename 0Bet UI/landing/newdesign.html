@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbered Grid</title>
+    <!-- Custom fonts for this template-->
+    <link href="./Content/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="./Content/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+   
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            /* Equal-width columns */
+            grid-gap: 30px;
+            max-width: 250px;
+            padding: 5px;
+        }
+
+        .grid div {
+            width: 200%;
+            height: 200%;
+            /* Create square divs */
+            background-color: #8BC34A;
+            /* Light Green */
+            color: #000;
+            /* Black Font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 5px 0px #000;
+            /* Black Shadow */
+            cursor: pointer;
+        }
+
+        .grid div:hover {
+            background-color: #2196F3;
+            /* Blue Highlight on Hover */
+        }
+
+        .grid div.clicked {
+            background-color: #2196F3;
+            /* Blue Background on Click */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="justify-content-center align-items-center">
+        <div>
+            <h1>How To Play :</h1>
+            <ul>
+                <li>Register an account</li>
+                <li>login to your account</li>
+                <li>Make sure you have credit in your wallet else recharge your wallet by using the existing payment methods</li>
+                <li>select a number in each row of the below grid</li>
+                <li>click on submit to finish the process</li>
+                <li>click on reset to again select the numbers</li>
+            </ul>
+        </div>
+        <div class="justify-content-center align-items-center p-5">
+            <div class="grid">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+            </div>
+        </div>
+
+        <div class="justify-content-center align-items-center p-5">
+            <a class="btn btn-primary" id="Submit" data-toggle="modal" data-target="#myModal">Submit</a>
+            <a class="btn btn-danger" id="Reset">Reset</a>
+            
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-dialog-centered p-5">
+                <div class="card">
+                    <div class="text-right cross"> <i class="fa fa-times"></i> </div>
+                    <div class="card-body text-center"> <img src="https://img.icons8.com/bubbles/200/000000/trophy.png">
+                        <h4>CONGRATULATIONS!</h4>
+                        <p>You have won the Jackpot..!</p> 
+                        <button class="btn btn-out btn-square continue">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="justify-content-center align-items-center p-5">
+            <h1>How To Redeem :</h1>
+            <ul>
+                <li>Open the wallet</li>
+                <li>click on the transfer</li>
+                <li>select the bank account</li>
+                <li>continue with remaining steps</li>
+                <li>if any issue while transfering contact us</li>
+                <li>It will take upto 3 to 4 days for reflecting in your account</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="./Plugins/jquery.min.js"></script>
+    <script src="./Plugins/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="./Plugins/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="./Plugins/sb-admin-2.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const grid = document.querySelector('.grid');
+            const divs = grid.querySelectorAll('div');
+            let clickedDivs = [];
+
+            divs.forEach((div, index) => {
+                div.addEventListener('click', () => {
+                    const row = Math.floor(index / 5); // Calculate the row
+                    const isSelected = div.classList.contains('clicked');
+
+                    // Unselect the previously selected div in the same row
+                    clickedDivs = clickedDivs.filter((clickedIndex) => Math.floor(clickedIndex / 5) !== row);
+
+                    // Remove the style for the previously selected div
+                    divs.forEach((d, i) => {
+                        if (clickedDivs.includes(i)) {
+                            d.classList.add('clicked');
+                        } else {
+                            d.classList.remove('clicked');
+                        }
+                    });
+
+                    if (!isSelected) {
+                        div.classList.add('clicked'); // Make the new div as clicked
+                        clickedDivs.push(index);
+                    }
+
+                    console.log('Clicked Divs:', clickedDivs.map((clickedIndex) => divs[clickedIndex].innerText));
+                });
+            });
+        });
+    </script>
+    <script>
+         $(document).ready(function () {
+            $("#Reset").click(function () {
+                location.reload(true);               
+            });
+            $("submit").click(function(){
+
+            });
+        });
+    </script>
+</body>
+
+</html>

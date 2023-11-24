@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../Content/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../Content/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            /* Place the video behind other content */
+        }
+
+        /* Optional: Style your content over the video */
+        #content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            z-index: 1;
+            /* Place the content above the video */
+        }
+
+        .social-icon a i {
+            color: #190e0e;
+            font-size: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+
+        .social-icon a:hover i {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1">
+        <video id="video-background" autoplay loop muted>
+            <!-- <source src="./images/BackVideo.webm" type="video/webm"> -->
+            <source src="../Data_Grid.mp4" type="video/mp4">
+
+        </video>
+
+        <div id="content">
+            <div class="container">
+
+                <!-- Outer Row -->
+                <div class="row justify-content-center">
+
+                    <div class="col-xl-10 col-lg-12 col-md-9">
+
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row">
+                                    <div class="col-lg-6 d-none d-lg-block bg-login-image">
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <!-- Login Form Start -->
+                                        <div class="p-5" id="login">
+                                            <div class="text-center">
+                                            </div>
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user" id="txtEmail"
+                                                    aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                                    required="required" >
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="txtPassword" placeholder="Password" required="required"
+                                                    >
+                                            </div>
+                                            <button class="btn btn-success btn-user btn-block">Login</button>
+                                            <hr>
+                                            <div class="text-center">
+                                                <p style="color: #190e0e;">Sign In With</p>
+                                            </div>
+                                            <div class="social-icon">
+                                                <a href="#"><i class='bx bxl-facebook'></i></a>
+                                                <a href="#"><i class='bx bxl-youtube'></i></a>
+                                                <a href="#"><i class='bx bxl-instagram'></i></a>
+                                                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                                                <a href="#"><i class='bx bxl-twitter'></i></a>
+                                            </div>
+                                            <hr>
+
+
+                                            <div class="text-center">
+                                                <a class="btn btn-info" id="forgot_password">Forgot Password?</a><br />
+                                                <br />
+                                                <p style="color: #190e0e;">Don't have an Account?</p>
+                                                <button class="btn btn-primary btn-user btn-block"
+                                                    id="Register_click">Create an Account!</button>
+                                            </div>
+                                            <div class="text-center">
+                                            </div>
+                                        </div>
+                                        <!-- Login Form End -->
+
+                                        <!-- Register Form Start -->
+                                        <div class="p-5" id="register">
+                                            <div class="text-center">
+                                            </div>
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Join Us.. To Get Started </h1>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user" id="txtEmail"
+                                                    aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                                    required="required" >
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="txtPassword" placeholder="Password" required="required"
+                                                    >
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="txtPassword2" placeholder="Repeat Password" required="required"
+                                                    >
+                                            </div>
+                                            <button class="btn btn-success btn-user btn-block">Register</button>
+                                            <hr>
+                                            <div class="text-center">
+                                                <p style="color: #190e0e;">Sign In With</p>
+                                            </div>
+                                            <div class="social-icon">
+                                                <a href="#"><i class='bx bxl-facebook'></i></a>
+                                                <a href="#"><i class='bx bxl-youtube'></i></a>
+                                                <a href="#"><i class='bx bxl-instagram'></i></a>
+                                                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                                                <a href="#"><i class='bx bxl-twitter'></i></a>
+                                            </div>
+                                            <hr>
+                                            <div class="text-center">
+                                                <p style="color: #190e0e;">Already have an Account?</p>
+
+                                                <button id="login_click"
+                                                    class="btn btn-primary btn-user btn-block">Login</button>
+                                            </div>
+                                            <div class="text-center">
+                                            </div>
+                                        </div>
+                                        <!-- Register Form End -->
+
+                                        <!-- Forgot Password Start -->
+                                        <div class="p-5" id="forgot">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Forgot Password?</h1>
+                                            </div>
+                                            <hr>
+                                            <div class="text-center">
+                                                <p style="color: #190e0e;">
+                                                    Enter the registered email address
+                                                </p>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user" id="txtEmail"
+                                                    aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                                    required="required" >
+                                            </div>
+                                            <div class="text-center">
+                                                <button class="btn btn-success btn-user btn-block"
+                                                    id="reset_click">Reset Password</button>
+                                                <br />
+                                                <button class="btn btn-danger" id="Cancel">Cancel</button>
+                                            </div>
+
+                                        </div>
+                                        <!-- Forgot Password End -->
+
+                                        <!-- OTP Enter -->
+                                        <div class="p-5" id="DivOtp">                                         
+                                                            <h5 class="text-gray-900 mb-4">Please enter the one time password
+                                                            <br>
+                                                                to verify your account</h5>
+                                                            <div>
+                                                                <span style="color: #190e0e;">A code has been sent to</span> <small style="color: #ff0000;">*******9897</small> 
+                                                            </div>
+                                                            <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+                                                                <input ID="Otp1" class="m-2 text-center form-control rounded" MaxLength="1" placeholder="*"></input>
+                                                                <input ID="Otp2" class="m-2 text-center form-control rounded" MaxLength="1" placeholder="*"></input>
+                                                                <input ID="Otp3" class="m-2 text-center form-control rounded" MaxLength="1" placeholder="*"></input>
+                                                                <input ID="Otp4" class="m-2 text-center form-control rounded" MaxLength="1" placeholder="*"></input>
+                                                                <input ID="Otp5" class="m-2 text-center form-control rounded" MaxLength="1" placeholder="*"></input>
+                                                                <input ID="Otp6" class="m-2 text-center form-control rounded" MaxLength="1" placeholder="*"></input>
+                                                            </div>
+                                                            <div class="text-center">                                                              
+                                                            <button class="btn btn-danger" id="validate">Validate Otp</button>
+
+                                                            </div>
+                                                            <br>                                                
+                                                            <div class="d-flex justify-content-between">
+                                                                <span style="color: #190e0e;">Didn't get the code?</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                <button class="btn btn-info" id="resend">Resend Otp</button>
+                                                                <br/>
+                                                            </div>
+                                                            
+                                                            <div class="content d-flex justify-content-between align-items-center">
+                                                            <button class="btn btn-dark" id="back">Back</button>
+                                                            </div>
+                                                      
+                                        </div>
+                                        <!-- OTP End -->        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../Plugins/jquery.min.js"></script>
+    <script src="../Plugins/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../Plugins/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../Plugins/sb-admin-2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#forgot").hide();
+            $("#register").hide();
+            $("#login").show();
+            $("#DivOtp").hide();
+            $("#Register_click").on("click", function (event) {
+                $("#login").hide();
+                $("#register").show();
+            });
+            $("#login_click").on("click", function (event) {
+                $("#register").hide();
+                $("#login").show();
+            });
+            $("#forgot_password").on("click", function (event) {
+                $("#register").hide();
+                $("#login").hide();
+                $("#forgot").show();
+            });
+            $("#Cancel").on("click", function (event) {
+                $("#register").hide();
+                $("#login").show();
+                $("#forgot").hide();
+            });
+
+            $("#reset_click").on("click", function (event) {
+                $("#register").hide();
+                $("#login").hide();
+                $("#forgot").hide();
+                $("#DivOtp").show();
+            });
+            $("#back").on("click", function (event) {
+                $("#register").hide();
+                $("#login").hide();
+                $("#forgot").show();
+                $("#DivOtp").hide();
+            });
+
+
+            // Handle keydown event on the input elements
+            $('.inputs input').keydown(function (e) {
+                const inputs = document.querySelectorAll('#otp > *[id]');
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].addEventListener('input', function(event) {
+                    if (event.data === null) {
+                        inputs[i].value = '';
+                        if (i !== 0) inputs[i - 1].focus();
+                    } else {
+                        if (i === inputs.length - 1 && inputs[i].value !== '') {
+                            return true;
+                        } else if (/^[0-9]$/i.test(event.data)) { //matches only numbers need to enter
+                            inputs[i].value = event.data;
+                            if (i !== inputs.length - 1) inputs[i + 1].focus();
+                            event.preventDefault();
+                        }
+                    }
+                });
+            }
+            });
+    });
+ 
+</script>
+
+
+</body>
+
+</html>
