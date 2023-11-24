@@ -6,17 +6,273 @@
     <title>Betting Website</title>
     <!-- Add Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
+        body {
+  background: #000; /* Dark background color */
+ /* Prevent horizontal scrolling */
+}
+
+.starry-sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://th.bing.com/th?id=OIP.yLhj19UOBcaVqDZRs9nReAHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2') center/cover no-repeat;
+  animation: stars 90s infinite linear;
+}
+
+h2{
+    color: #fff;
+}
+
+@keyframes stars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px; /* Adjust the values to control animation speed and direction */
+  }
+}
+
       section {
             height: 100%;
       }
+      .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .slide-container {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+
+    .mySwiper2 .swiper {
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    .mySwiper2 .swiper-slide {
+      font-size: 18px;
+      color: #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 40px 60px;
+    }
+    .parallax-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 130%;
+      height: 100%;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mySwiper2 .swiper-slide .title {
+      font-size: 41px;
+      font-weight: 1000;
+    }
+
+    .mySwiper2 .swiper-slide .subtitle {
+      font-size: 21px;
+    }
+
+    .mySwiper2 .swiper-slide .text {
+      font-size: 14px;
+      max-width: 400px;
+      line-height: 1.3;
+    }
+    /* Style for the winners container */
+.winners-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style for the heading */
+.winners-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Style for individual winner cards */
+.winner-card {
+  display: inline-grid;
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  transition: transform 0.3s;
+  justify-content: center;
+}
+
+.winner-card:hover {
+  transform: scale(1.05);
+}
+
+/* Style for winner avatars */
+.winner-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Style for winner information */
+.winner-info {
+  padding: 10px;
+}
+
+.winner-info h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.winner-info p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #777;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .winner-card {
+    width: 100%;
+  }
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 0;
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+}
+
+.footer-links ul,
+.footer-info ul {
+  list-style: none;
+  padding: 0;
+  /* display: flex; */
+  margin: 0;
+}
+
+.footer-links li,
+.footer-info li {
+  margin: 5px 20px; /* Adjust the margin to control spacing */
+  font-size: 16px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffca00; /* Highlight color for links on hover */
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.social-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #ffca00; /* Social media icon color */
+}
+
+.navbar {
+        background-color: #333; /* Background color of the navbar */
+    }
+
+    .navbar-brand {
+        color: #fff; /* Text color for the brand/logo */
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .navbar-toggler-icon {
+        background-color: #fff; /* Color of the hamburger icon */
+    }
+
+    .navbar-toggler {
+        border: none; /* Remove the border from the toggle button */
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff; /* Text color for the links */
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffca00; /* Text color for links on hover */
+    }
+
+
+
     </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Betting Website</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -26,74 +282,82 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#latest-games">Trending Games</a>
+                    <a class="nav-link" href="#latest-games" onclick="closeNavbar()">Trending Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#games-list">Available Games</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="#how-to-play">Recent Winnners</a>
+                    <a class="nav-link" href="#games-list" onclick="closeNavbar()">Available Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#how-to-play">How to Play</a>
+                    <a class="nav-link" href="#how-to-play" onclick="closeNavbar()">Recent Winners</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#how-to-redeem">Redeem Money</a>
+                    <a class="nav-link" href="#how-to-play" onclick="closeNavbar()">How to Play</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#how-to-redeem" onclick="closeNavbar()">Redeem Money</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" onclick="closeNavbar()">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
+<br><br><br>
 <!-- Latest Games Section -->
 <section id="latest-games" class="py-5">
    <div class="container">
    <h2>#Trending Games</h2>
-    <!-- Image Carousel -->
-    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Image Slide 1 -->
-            <div class="carousel-item active">
-                <img src="./images/image1.jpeg" class="d-block w-100" alt="Image 1">
-                <div class="carousel-caption">
-                    <button class="btn btn-primary play-now-button">Play Now</button>
-                </div>
-            </div>
-            <!-- Image Slide 2 -->
-            <div class="carousel-item">
-                <img src="./images/image2.jpeg" class="d-block w-100" alt="Image 2">
-                <div class="carousel-caption">
-                    <button class="btn btn-primary play-now-button">Play Now</button>
-                </div>
-            </div>
-            <!-- Image Slide 3 -->
-            <div class="carousel-item">
-                <img src="./images/image3.jpeg" class="d-block w-100" alt="Image 2">
-                <div class="carousel-caption">
-                    <button class="btn btn-primary play-now-button">Play Now</button>
-                </div>
-            </div>
-            <!-- Image Slide 4 -->
-            <div class="carousel-item">
-                <img src="./images/image4.jpeg" class="d-block w-100" alt="Image 2">
-                <div class="carousel-caption">
-                    <button class="btn btn-primary play-now-button">Play Now</button>
-                </div>
-            </div>
-            <!-- Add more slides here for images 3, 4, and 5 -->
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
         </div>
-        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#imageCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat for other slides -->
     </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  
 </div>
 
 </section>
@@ -104,6 +368,53 @@
      <h2>Available Games</h2>
         <!-- Add a list of available games -->
         <!-- Customize this according to your needs -->
+          <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-container">
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <div class="overlay">
+            <button class="btn btn-info play-button">Play Now</button>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat for other slides -->
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
     </div>
 </section>
 
@@ -111,7 +422,55 @@
 <section id="how-to-play" class="py-5">
     <div class="container">
         <h2>How to Play</h2>
-        <!-- Add a brief description of how to play the games -->
+        <div style="--swiper-navigation-color: #020101; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="parallax-bg" style="
+                  background-image: url(https://th.bing.com/th/id/OIP.hgB7C4VyZcM6ZD6guhYgAAHaEK?w=330&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+                " data-swiper-parallax="-23%"></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300"> Scratch & Win</div>
+                <div class="subtitle" data-swiper-parallax="-200">Instant Gratification</div>
+                <div class="text" data-swiper-parallax="-100">
+              <ul>
+                <li>Buy a scratch card of your choice.</li>
+                <li>Use your mouse or touchscreen to "scratch" off the hidden areas and reveal symbols or numbers.</li>
+                <li>Match the revealed symbols/numbers with the winning combinations to win prizes.</li>
+                <li>Prizes can include cash rewards, bonus points, or free scratch cards.</li>
+                <li>It's a quick and straightforward game that offers immediate results and excitement.</li>
+              </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">Lucky Numbers</div>
+                <div class="subtitle" data-swiper-parallax="-200">A Classic Lottery Experience</div>
+                <div class="text" data-swiper-parallax="-100">
+                  <ul>
+                    <li>Choose a set of numbers from a specified range, e.g., 1 to 50.</li>
+                    <li>Purchase a ticket for the upcoming draw.</li>
+                    <li>Watch the live or automated drawing to see if your numbers match the winning combination.</li>
+                    <li>Prizes vary based on the number of matches, with the jackpot for a complete match.</li>
+                    <li>Additional features can include multipliers and bonus draws, adding excitement to the game.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">Bingo Bonanza</div>
+                <div class="subtitle" data-swiper-parallax="-200">Social and Exciting Bingo Game</div>
+                <div class="text" data-swiper-parallax="-100">
+                 <ul>
+                    <li>Purchase one or more bingo cards with a grid of numbers.</li>
+                    <li>Join a scheduled game session with other players.</li>
+                    <li>As numbers are called, mark them on your card.</li>
+                    <li>Complete a specified pattern (e.g., a line, X, or full card) to win a prize.</li>
+                    <li>Bingo offers social interaction through chat features and often includes progressive jackpots and themed games to keep players engaged.</li>
+                 </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
     </div>
 </section>
 
@@ -119,6 +478,38 @@
     <div class="container">
         <h2>Recent Winners</h2>
         <!-- Add a brief description of how to play the games -->
+        <div class="winners-container">
+            <h2>Recent Winners</h2>
+            <div class="winner-card">
+              <div class="winner-avatar">
+                <img src="https://th.bing.com/th?id=OIP.awAiMS1BCAQ2xS2lcdXGlwHaHH&w=255&h=245&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Winner 1">
+              </div>
+              <div class="winner-info justify-content-center align-items-center">
+                <h3>John Doe</h3>
+                <p>Prize: $1,000</p>
+              </div>
+            </div>
+            <div class="winner-card">
+              <div class="winner-avatar">
+                <img src="https://th.bing.com/th?id=OIP.bbEC4zuJyYZq2FwlY1w1kAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Winner 2">
+              </div>
+              <div class="winner-info">
+                <h3>Jane Smith</h3>
+                <p>Prize: $500</p>
+              </div>
+            </div>
+            <div class="winner-card">
+                <div class="winner-avatar">
+                  <img src="https://th.bing.com/th/id/OIP.-PBkqFsQinA9ylHOLdr_BQHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Winner 2">
+                </div>
+                <div class="winner-info">
+                  <h3>Jane Smith</h3>
+                  <p>Prize: $500</p>
+                </div>
+              </div>
+            <!-- Add more winner cards as needed -->
+          </div>
+          
     </div>
 </section>
 
@@ -127,26 +518,165 @@
     <div class="container">
         <h2>How to Redeem Money</h2>
         <!-- Add information on how users can withdraw their winnings -->
+        <div style="--swiper-navigation-color: #020101; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="parallax-bg" style="
+                  background-image: url(https://th.bing.com/th/id/OIP.hgB7C4VyZcM6ZD6guhYgAAHaEK?w=330&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+                " data-swiper-parallax="-23%"></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300"> Scratch & Win</div>
+                <div class="subtitle" data-swiper-parallax="-200">Instant Gratification</div>
+                <div class="text" data-swiper-parallax="-100">
+              <ul>
+                <li>Buy a scratch card of your choice.</li>
+                <li>Use your mouse or touchscreen to "scratch" off the hidden areas and reveal symbols or numbers.</li>
+                <li>Match the revealed symbols/numbers with the winning combinations to win prizes.</li>
+                <li>Prizes can include cash rewards, bonus points, or free scratch cards.</li>
+                <li>It's a quick and straightforward game that offers immediate results and excitement.</li>
+              </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">Lucky Numbers</div>
+                <div class="subtitle" data-swiper-parallax="-200">A Classic Lottery Experience</div>
+                <div class="text" data-swiper-parallax="-100">
+                  <ul>
+                    <li>Choose a set of numbers from a specified range, e.g., 1 to 50.</li>
+                    <li>Purchase a ticket for the upcoming draw.</li>
+                    <li>Watch the live or automated drawing to see if your numbers match the winning combination.</li>
+                    <li>Prizes vary based on the number of matches, with the jackpot for a complete match.</li>
+                    <li>Additional features can include multipliers and bonus draws, adding excitement to the game.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">Bingo Bonanza</div>
+                <div class="subtitle" data-swiper-parallax="-200">Social and Exciting Bingo Game</div>
+                <div class="text" data-swiper-parallax="-100">
+                 <ul>
+                    <li>Purchase one or more bingo cards with a grid of numbers.</li>
+                    <li>Join a scheduled game session with other players.</li>
+                    <li>As numbers are called, mark them on your card.</li>
+                    <li>Complete a specified pattern (e.g., a line, X, or full card) to win a prize.</li>
+                    <li>Bingo offers social interaction through chat features and often includes progressive jackpots and themed games to keep players engaged.</li>
+                 </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
     </div>
 </section>
 
-<!-- Contact Us Section -->
-<section id="contact" class="py-5">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <!-- Add a contact form or contact information here -->
-    </div>
-</section>
 
 <!-- Footer -->
-<footer class="py-3 bg-light">
+  <!-- ======= Footer ======= -->
+  <footer class="footer" id="contact">
     <div class="container">
-        <!-- Add your footer content here -->
+        <h2>Contact Us</h2>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Lottery Logo">
+          <h2>LotteryNow</h2>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Winners</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <ul>
+            <li><span class="icon">&#128222;</span> Contact: support@lotterynow.com</li>
+            <li><span class="icon">&#127964;</span> Address: 123 Lottery Street, Cityville</li>
+            <li><span class="icon">&#127873;</span> Follow Us: 
+              <a href="#" class="social-icon">&#xf09a;</a>
+              <a href="#" class="social-icon">&#xf099;</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
+  
 
 <!-- Add Bootstrap JS and jQuery scripts at the end of the body -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    function closeNavbar() {
+        // Close the mobile navbar when a link is clicked
+        document.querySelector('.navbar-toggler').click();
+    }
+    </script>
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    initialSlide: 1,
+    loop: true,
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<script>
+    var swiper2 = new Swiper(".mySwiper2", {
+      speed: 600,
+      parallax: true,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    //   mousewheel: true,
+    });
+  </script>
+  <script>
+    // Function to scroll to the target section
+    function scrollToSection(targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    // Function to handle navigation link clicks
+    function handleNavLinkClick(event) {
+        event.preventDefault();
+        const targetId = event.target.getAttribute("href").substring(1);
+        scrollToSection(targetId);
+    }
+
+    // Add click event listeners to navigation links
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", handleNavLinkClick);
+    });
+</script>
+
 </body>
 </html>
