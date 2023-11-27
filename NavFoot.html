@@ -15,108 +15,9 @@
         
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./NavFoot.css">
 </head>
-<STYLE>
-    
-/*
----------------------------------------------
-Footer page
----------------------------------------------
-*/
 
-.footer {
-	padding: 80px 0;
-}
-
-.footer .container {
-	max-width: 1170px;
-	margin: auto;
-}
-
-.footer .row {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.footer ul {
-	list-style: none;
-}
-
-.footer-col {
-	width: 25%;
-	padding: 0 15px;
-}
-
-.footer-col h4 {
-	font-size: 18px;
-	color: #000000;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
-}
-
-.footer-col h4::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -10px;
-	background-color: #E91E63;
-	width: 50px;
-	height: 2px;
-}
-
-.footer-col ul li:not(:last-child) {
-	margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-	color: #f70a0a;
-	display: block;
-	font-size: 1rem;
-	font-weight: 300;
-	text-transform: capitalize;
-	text-decoration: none;
-	transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-	color: #8cda0f;
-	padding-left: 7px;
-}
-
-.footer-col .social-links a {
-	color: #0c0a0a;
-	background-color: rgba(245, 236, 236, 0.2);
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	border-radius: 50%;
-	text-align: center;
-	margin: 0 10px 10px 0;
-	line-height: 40px;
-	transition: all 0.5s ease;
-}
-
-.footer-col .social-links a:hover {
-	color: #151515;
-	background-color: #5fe009;
-}
-
-@media(max-width: 767px) {
-	.footer-col {
-		width: 50%;
-		margin-bottom: 30px;
-	}
-}
-
-@media(max-width: 574px) {
-	.footer-col {
-		width: 100%;
-	}
-}
-
-</STYLE>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
         <div class="container-fluid">
@@ -160,12 +61,55 @@ Footer page
         </div>
     </nav>
 
-    <aside></aside>
+    <aside id="aside1">
+      <h4>Table of contents</h4>
+      <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+      </ul>
+    </aside>
     <main>
-      
+      <h1>Topic:</h1>
+      <h2>Wildcard usage</h2>
+      <p>
+        You can use the asterisk character <mark>(*)</mark> as a wildcard to match any series of characters.<br/><br/>
+        For example, use ran*ing to match any word or phrase starting with ran and ending with "ing". 
+        If you really do want to match an asterisk then use a backslash like this: \*<br/><br/>
+
+        If you want one question with the two answers fuel and oxygen, you ought to be able to limit 
+        the number of variants by writing fuel*oxygen.<br/><br/>
+        
+        This would accept "fuel oxygen", "fuel, oxygen", "fuel; oxygen", "fuel and oxygen", "fuel & oxygen" "fuel oxygen", "fuel und oxygen" "fuel&&oxygen". It would even accept "fuel or oxygen", "fuel but not oxygen" "fuel|oxygen" which might not be so good but you can never be completely safe!
+
+Here are some answers and scores for a question "What does a rocket burn?".
+<ul>
+  <li>oxygen*fuel with a score 100%</li>
+  <li>*fuel* with a score 50%</li>
+  <li>*oxygen* with a score 50%</li>
+  <li>*air* with a score 40%</li>
+</ul>
+
+The order of the answers is important. The answers are evaluated from 1st to last. When a match is found the process stops. If no match is found the question is scored wrong and the general response is used. It is a good practice to put a wild card as the last answer so the evaluation process knows what to do when nothing above it matches.
+<br><br>
+Without wildcards, the answers are compared exactly, so be careful with your spelling!
+      </p>
     </main>
-    <aside></aside>
-    <footer class="footer">
+    <aside id="aside2">
+      <h4>Related Topics</h4>
+      <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+      </ul>
+    </aside>
+    <footer class="footer bg-dark">
         <div class="container row">
           <div class="footer-col">
             <h4>University</h4>
